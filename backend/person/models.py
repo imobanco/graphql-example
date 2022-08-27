@@ -12,3 +12,6 @@ class Person(BaseModel):
     name = models.CharField(
         max_length=255, verbose_name="nome", help_text="nome completo"
     )
+
+    def __str__(self):
+        return f"{self.minimal_id} | {self.name}"
