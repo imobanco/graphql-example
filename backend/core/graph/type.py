@@ -19,5 +19,6 @@ class SmartDjangoObjectType(DjangoObjectType):
         except Exception:
             pass
         return super().__init_subclass_with_meta__(
+            fields=fields,
             **options,
         )
