@@ -1,4 +1,4 @@
-from core.apis.serializers import BaseModelSerializer
+from core.views.serializers import BaseModelSerializer
 
 from ..models import Todo, TodoItem
 
