@@ -1,4 +1,4 @@
-from core.views.serializers import BaseModelSerializer
+from core.views.rest_serializers import BaseModelSerializer
 
 from ..models import Person
 
