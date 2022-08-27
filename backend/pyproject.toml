@@ -37,11 +37,13 @@ authors = ["Imobanco"]
 readme = "README.md"
 packages = [{include = "**/*.py"}]
 
+
 [tool.poetry.dependencies]
 python = "3.8.*"
-Django = "^4.1"
+Django = "3.2"
 djangorestframework = "^3.13.1"
 drf-spectacular = "^0.23.1"
+graphene-django = "^2.15.0"
 
 
 [tool.poetry.dev-dependencies]
