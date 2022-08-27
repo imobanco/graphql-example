@@ -39,10 +39,7 @@ DEFAULT_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = [
-    'drf_spectacular',
-    'rest_framework',
-]
+THIRD_PARTY_APPS = ["drf_spectacular", "rest_framework", "graphene_django"]
 
 PROJECT_APPS = ["core", "person", "todo"]
 
@@ -133,12 +130,16 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Backend',
-    'DESCRIPTION': 'Meu projeto legal',
-    'VERSION': '0.0.0',
-    'SERVE_INCLUDE_SCHEMA': False,
+    "TITLE": "Backend",
+    "DESCRIPTION": "Meu projeto legal",
+    "VERSION": "0.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
+
+GRAPHENE = {
+    "SCHEMA": "django_root.schema.schema"
 }
