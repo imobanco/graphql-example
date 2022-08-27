@@ -141,5 +141,5 @@ SPECTACULAR_SETTINGS = {
 }
 
 GRAPHENE = {
-    "SCHEMA": "django_root.schema.schema"
+    "SCHEMA": "core.views.graph.schema"
 }
