@@ -1,8 +1,8 @@
+from rest_framework.routers import DefaultRouter
 from rest_framework.viewsets import ModelViewSet
 
-from rest_framework.routers import DefaultRouter
-from .serializers import PersonSerializer
 from ..models import Person
+from .serializers import PersonSerializer
 
 
 class PersonViewSet(ModelViewSet):

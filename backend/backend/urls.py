@@ -1,9 +1,8 @@
 from django.urls import include, path
 
+from core.views.urls import urlpatterns as core
 from person.views.urls import urlpatterns as person
 from todo.views.urls import urlpatterns as todo
-from core.views.urls import urlpatterns as core
-
 
 urlpatterns = [
     path("", include(core)),

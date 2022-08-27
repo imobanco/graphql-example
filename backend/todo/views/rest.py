@@ -1,7 +1,8 @@
-from rest_framework.viewsets import ModelViewSet
 from rest_framework.routers import DefaultRouter
-from .serializers import TodoSerializer, TodoItemSerializer
+from rest_framework.viewsets import ModelViewSet
+
 from ..models import Todo, TodoItem
+from .serializers import TodoItemSerializer, TodoSerializer
 
 
 class TodoViewSet(ModelViewSet):

@@ -1,5 +1,4 @@
 from ..models import BaseModel
-
 from ..rest_framework.serializers import SmartModelSerializer
 
 

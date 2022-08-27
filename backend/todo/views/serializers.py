@@ -15,9 +15,5 @@ class TodoSerializer(BaseModelSerializer):
 class TodoItemSerializer(BaseModelSerializer):
     class Meta:
         model = TodoItem
-        fields = [
-            "name",
-            "done",
-            "todo"
-        ]
+        fields = ["name", "done", "todo"]
         extra_kwargs = {}

@@ -9,4 +9,6 @@ class Person(BaseModel):
         verbose_name = "Pessoa"
         verbose_name_plural = "Pessoas"
 
-    name = models.CharField(max_length=255, verbose_name="nome", help_text="nome completo")
+    name = models.CharField(
+        max_length=255, verbose_name="nome", help_text="nome completo"
+    )
