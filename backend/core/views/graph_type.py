@@ -1,8 +1,8 @@
+from ..graph.type import SmartDjangoObjectType
 from ..models import BaseModel
-from ..graph.type import SmartDjangoObjectType, DjangoObjectType
 
 
-class BaseModelObjectType(DjangoObjectType, SmartDjangoObjectType):
+class BaseModelObjectType(SmartDjangoObjectType):
     class Meta:
         model = BaseModel
         fields = [

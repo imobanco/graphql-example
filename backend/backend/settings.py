@@ -140,6 +140,4 @@ SPECTACULAR_SETTINGS = {
     "SERVE_INCLUDE_SCHEMA": False,
 }
 
-GRAPHENE = {
-    "SCHEMA": "core.views.graph.schema"
-}
+GRAPHENE = {"SCHEMA": "core.views.graph.schema"}
