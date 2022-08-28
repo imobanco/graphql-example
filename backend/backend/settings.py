@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from corsheaders.defaults import default_headers
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,14 @@ SECRET_KEY = "django-insecure-kq-w_l(1lhu3b4z+cf4!j*f&g3*=85tu+6v7xwkvn0sohh7md7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = DEBUG
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    # "http://app.imobanco.com.br",
+    # "https://app.imobanco.com.br",
+]
+CORS_ALLOW_HEADERS = list(default_headers) + ["client", "x-suggested-filename"]
 
 
 # Application definition
@@ -39,7 +48,7 @@ DEFAULT_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["drf_spectacular", "rest_framework", "graphene_django"]
+THIRD_PARTY_APPS = ["drf_spectacular", "corsheaders", "rest_framework", "graphene_django"]
 
 PROJECT_APPS = ["core", "person", "todo"]
 
@@ -48,6 +57,7 @@ INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
