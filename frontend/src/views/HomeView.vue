@@ -6,13 +6,13 @@ import {PersonRepository} from "@/person/repository"
 const myCall = async () => {
   console.log('my call')
   const repo = new PersonRepository()
-  let person = await repo.create('Meu Nome teste')
+  let person = repo.get_empty_entity()
+  person.name = 'Meu nome'
+  await repo.create(person)
   console.log('create', person)
   person.name = 'Meu nome alterado de teste'
-  person = await repo.update_entity(person)
-  console.log('update entity', person)
-  person = await repo.update_data(person.id, {'name': 'Meu nome alterado sem entity de teste'})
-  console.log('update entity', person)
+  await repo.update(person)
+  console.log('update', person)
 }
 
 </script>

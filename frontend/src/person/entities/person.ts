@@ -19,6 +19,13 @@ export class Person extends BaseModelc{
         }
     }
 
+    update_from_data(person_data: any){
+        this.name = person_data.name
+        this.id = person_data.id
+        this.created_at = person_data.created_at
+        this.updated_at = person_data.updated_at
+    }
+
     static from_data(person_data: any){
         return new Person(
             person_data.name, 

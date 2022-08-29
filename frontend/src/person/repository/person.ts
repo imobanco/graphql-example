@@ -4,29 +4,31 @@ import { RestModelAdapter } from '@/core/adapters/rest_model'
 export class PersonRepository{
 
     rest_model: RestModelAdapter
+    graph_model: RestModelAdapter
 
     constructor(restModelAdapter: RestModelAdapter|undefined=undefined){
         if(restModelAdapter == undefined){
-            restModelAdapter = new RestModelAdapter('rest/persons')
+            restModelAdapter = new RestModelAdapter('/rest/persons/')
         }
         this.rest_model = restModelAdapter
     }
 
-
-    async create(name: string): Promise<Person>{
-        const resp = await this.rest_model.create({'name': name})
-        return Person.from_data(resp.data)
+    get_empty_entity(): Person{
+        return new Person(undefined, undefined, undefined, undefined)
     }
 
-    async update_entity(person: Person): Promise<Person>{
+    async create(person: Person): Promise<Person>{
+        const resp = await this.rest_model.create({'name': person.name})
+        person.update_from_data(resp.data)
+        return person
+    }
+
+    async update(person: Person): Promise<Person>{
         const resp = await this.rest_model.update(person.id, {'name': person.name})
-        return Person.from_data(resp.data)
+        person.update_from_data(resp.data)
+        return person
     }
 
-    async update_data(person_id: string, person_data: object): Promise<Person>{
-        const resp = await this.rest_model.update(person_id, person_data)
-        return Person.from_data(resp.data)
-    }
 
     // partial_update()
 
@@ -35,7 +37,6 @@ export class PersonRepository{
     // retrieve(id: string): Person
 
     // update()
-
 
 
     // delete()

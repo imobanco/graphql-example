@@ -1,8 +1,8 @@
 export class BaseModelc{
     constructor(
-        public readonly id: string,
-        public readonly created_at: Date,
-        public readonly updated_at: Date,
+        public id: string,
+        public created_at: Date,
+        public updated_at: Date,
     ){}
 }
 

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {ErrorHandler} from '@/core/exceptions'
+import { ErrorHandler } from '@/core/exceptions'
 import { UrlUtils } from '@/core/utils/url'
 
 
