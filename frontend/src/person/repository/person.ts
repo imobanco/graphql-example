@@ -4,7 +4,6 @@ import { RestModelAdapter } from '@/core/adapters/rest_model'
 export class PersonRepository{
 
     rest_model: RestModelAdapter
-    graph_model: RestModelAdapter
 
     constructor(restModelAdapter: RestModelAdapter|undefined=undefined){
         if(restModelAdapter == undefined){
