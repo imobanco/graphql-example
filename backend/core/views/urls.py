@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
+from django.views.decorators.csrf import csrf_exempt
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -16,7 +17,7 @@ rest_doc = [
 ]
 
 graphql_doc = [
-    path("", GraphQLView.as_view(graphiql=True)),
+    path("", csrf_exempt(GraphQLView.as_view(graphiql=True))),
 ]
 
 urlpatterns = [

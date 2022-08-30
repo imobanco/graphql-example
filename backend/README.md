@@ -50,3 +50,8 @@ Exemplo de query graphql
 }
 
 ```
+
+
+```
+{a:personsList{id,name}b:personsList{name}}
+```
