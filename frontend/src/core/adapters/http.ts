@@ -38,7 +38,7 @@ export class HttpAdaptor{
         return await this.handle_promise(promise)
     }
 
-    async post(url: string, data: object, query: object|undefined=undefined){
+    async post(url: string, data: any, query: object|undefined=undefined){
         const new_url = UrlUtils.construct_url(this.base_url, url) + UrlUtils.construct_query(query)
         const promise = axios.post(new_url, data)
         return await this.handle_promise(promise)
