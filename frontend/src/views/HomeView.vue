@@ -26,11 +26,9 @@ const myCall2 = async () => {
   // console.log(r.constuct())
 
   const a = new GrapModelAdapter('personsList', 'personsRetrieve', 'personsWrite', ['id', 'name'])
-  const c = await a.create({'name': 'Graph Request Front'})
-  console.log(c)
-  const l = await a.list()
-  console.log(l)
-
+  console.log(await a.create({'name': 'Graph Request Front'}))
+  console.log(await a.list())
+  console.log(await a.list(['id'], 'meu_read'))
 }
 
 </script>
